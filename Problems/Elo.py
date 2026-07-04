@@ -9,4 +9,5 @@ if AB == 'A':
 elif AB == 'B':
     ans = 1/(1+10**((RA-RB)/400))
 
+#แสดงผลลัพธ์
 print(round(ans, 2))
