@@ -1,6 +1,6 @@
 #ระบุตัวเลข
-RA = int(input('ระบุ RA: '))
-RB = int(input('ระบุ RB: '))
+RA = float(input('ระบุ RA: '))
+RB = float(input('ระบุ RB: '))
 AB = input('เป็น A หรือ B: ')
 
 #ให้คำตอบ
