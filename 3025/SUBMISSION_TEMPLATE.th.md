@@ -14,25 +14,25 @@
 
 หมายเลข/ชื่อโจทย์ OJ:
 
-```text
+```OJ3025 - Season
 
 ```
 
 OJ submission ID ถ้ามีการส่งแล้ว:
 
-```text
+```549887
 
 ```
 
 สถานะ OJ:
 
-```text
+```Pass
 Pass / Not Pass / Not Submit
 ```
 
 เวลาที่ใช้คิดและทำโจทย์ด้วยตนเอง:
 
-```text
+```30-60 minutes
 
 ```
 
@@ -72,7 +72,18 @@ More than 4 weeks
 
 ถ้ายังไม่เข้าใจโจทย์ทั้งหมด ให้เขียนสิ่งที่เข้าใจในตอนนี้ ความเข้าใจอาจยังไม่ครบหรืออาจผิดได้ แต่ต้องพยายามอธิบายอย่างจริงใจ
 
-```text
+```โจทย์ต้องการให้สร้างระบบบอกฤดูกาลที่เกิดขึ้นในแต่ละวันที่และเดือน โดยโจทย์กำหนดฤดูกาลของแต่ละวันให้
+
+Input:
+บรรทัดแรก ใส่เดือนเป็นเลขจำนวนเต็ม
+บรรทัดที่ 2 ใส่วันที่เป็นเลขจำนวนเต็ม
+
+Output:
+แสดงผลออกมาเป็นชื่อฤดูกาล
+
+Constraints:
+เนื่องจากโจทย์กำหนดไว้ว่า ฤดูกาลจะเปลี่ยนไปตั้งแต่วันที่ 21 ของเดือนที่ 3 หารลงตัว ทำให้การทำความเข้าใจซับซ้อนมากกว่าโจทย์ข้ออื่นๆ
+
 
 ```
 
@@ -93,9 +104,10 @@ More than 4 weeks
 สามารถเขียนเป็น pseudocode, flowchart idea หรือขั้นตอนความคิดได้
 
 ```text
-Step 1:
-Step 2:
-Step 3:
+Step 1: สร้าง Input ใส่เดือนและวันเป็นจำนวนเต็ม
+Step 2: สร้างฟังก์ชัน if else โดยใส่เงื่อนไขของเดือนที่ 3 หารไม่ลงตัว
+Step 3: ใส่เงื่อนไขเกี่ยวกับการเปลี่ยนฤดูกาลในวันที่ที่กำหนดและเดือนที่หาร 3 ลงตัว
+Step 4: แสดงผลคำตอบออกมา 
 ```
 
 ---
@@ -114,7 +126,8 @@ Step 3:
 
 ห้ามคัดลอกคำอธิบายจากคนอื่น
 
-```text
+```วิธีสุดท้ายของฉันคล้ายกับแผนแรก แต่แตกต่างตรงที่ฉันมีการตั้งตัวแปร season 1,2,3,4 ซึ่งแทนเงื่อนไข "Input เป็นเดือนเป็นเดือนที่หาร 3 ลงตัวและไม่ถึงวันที่ 21" เพื่อให้ code ไม่ขัดกับหลัก PEP-8 ในเรื่องของจำนวน operator
+ตัวอย่าง: season1 = month == 3 and day < 21
 
 ```
 
@@ -134,31 +147,32 @@ Step 3:
 
 ทำไมเลือก case นี้:
 
-```text
+```เดือนเป็นเดือนที่มีการเปลี่ยนฤดู และวันที่เป็นวันที่ก่อนวันที่เปลี่ยนฤดู เพื่อเช็คว่าระบบฤดูธรรมดาทำงานถูกต้อง
 
 ```
 
 Input:
 
-```text
+```3
+20
 
 ```
 
 Expected output:
 
-```text
+```winter
 
 ```
 
 Actual output:
 
-```text
+```winter
 
 ```
 
 Result:
 
-```text
+```Pass
 Pass / Not Pass
 ```
 
@@ -166,31 +180,32 @@ Pass / Not Pass
 
 ทำไมเลือก case นี้:
 
-```text
+```เดือนเป็นเดือนที่มีการเปลี่ยนฤดู และวันที่เป็นวันที่ต้องเปลี่ยนฤดู เพื่อเช็คว่าใส่วันที่และลำดับการเปลี่ยนฤดูถูกต้อง
 
 ```
 
 Input:
 
-```text
+```6
+21
 
 ```
 
 Expected output:
 
-```text
+```summer
 
 ```
 
 Actual output:
 
-```text
+```summer
 
 ```
 
 Result:
 
-```text
+```Pass
 Pass / Not Pass
 ```
 
@@ -198,31 +213,32 @@ Pass / Not Pass
 
 ทำไมเลือก case นี้:
 
-```text
+```เดือนเป็นเดือนที่มีการเปลี่ยนฤดู และวันหลังเปลี่ยนฤดู เพื่อเช็คว่าหลังที่ 21 ที่เปลี่ยนฤดูก็มีการเปลี่ยนฤดูตามเช่นกัน
 
 ```
 
 Input:
 
-```text
+```9
+22
 
 ```
 
 Expected output:
 
-```text
+```fall
 
 ```
 
 Actual output:
 
-```text
+```fall
 
 ```
 
 Result:
 
-```text
+```Pass
 Pass / Not Pass
 ```
 
@@ -232,7 +248,7 @@ Pass / Not Pass
 
 ใช้ AI กับโจทย์นี้หรือไม่
 
-```text
+```No
 Yes / No
 ```
 
@@ -250,7 +266,7 @@ ai_reflection.md
 
 ได้ถามเพื่อน TA ผู้สอน หรือบุคคลอื่นเพื่อขอความช่วยเหลือในโจทย์นี้หรือไม่
 
-```text
+```Yes
 Yes / No
 ```
 
@@ -275,25 +291,25 @@ Yes / No
 
 ใครช่วยคุณ
 
-```text
+```คู่ Pair และพี่ TA
 
 ```
 
 เขาช่วยอะไร
 
-```text
+```ได้ร่วมกับคู่ Pair ช่วยหาทางแก้ปัญหาโจทย์และเขียนโปรแกรมทั้งหมด และให้พี่ TA ช่วยอ่านและตีความหมายของโจทย์
 
 ```
 
 คุณยังทำอะไรด้วยตนเอง
 
-```text
+```ได้คิดแผนแรก ช่วยคู่ Pair ในเรื่องการเขียน code และหา errors ออกแบบ test cases และส่งเข้าระบบ OJ
 
 ```
 
 คุณคัดลอก code จากคนอื่นหรือไม่
 
-```text
+```No
 No
 ```
 
@@ -305,10 +321,10 @@ No
 
 | Statement | Yes/No |
 |---|---|
-| I wrote this submission in my own words. | |
-| I understand my final code. | |
-| I recorded the real OJ status. | |
-| I did not copy AI-generated text directly into this file. | |
-| I did not copy code from another person. | |
-| If I received human help, I disclosed it in this file. | |
-| I submitted the final code to the OJ by myself. | |
+| I wrote this submission in my own words. | Yes |
+| I understand my final code. | Yes |
+| I recorded the real OJ status. | Yes |
+| I did not copy AI-generated text directly into this file. | Yes |
+| I did not copy code from another person. | Yes |
+| If I received human help, I disclosed it in this file. | Yes |
+| I submitted the final code to the OJ by myself. | Yes |
