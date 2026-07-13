@@ -1,4 +1,4 @@
 """สลับตัวอักษร"""
-text =  str(input())
+TEXT =  str(input())
 
-print(text.lower[::-1])
+print(TEXT.lower()[::-1])
