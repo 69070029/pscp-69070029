@@ -1,9 +1,9 @@
 """บัตรนศ"""
 #ใส่รหัสนศ
-id = input("ระบุรหัสนักศึกษา: ")
+student = input("ระบุรหัสนักศึกษา: ")
 
 #condition
-if id[2] == '1' and id[3] == '6':
+if student[2] == '1' and student[3] == '6':
     print("yes")
-else: 
+else:
     print('no')

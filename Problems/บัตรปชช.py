@@ -1,9 +1,7 @@
 """บัตรปชช"""
-#ระบุเลขบัตร
-id = input('ระบุเลขบัตรปชช: ')
+IDcard = input('ระบุเลขบัตรปชช: ')
 
-#condition
-if len(id) == 13:
+if len(IDcard) == 13:
     print('yes')
 else:
     print('no')
