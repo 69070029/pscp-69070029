@@ -15,25 +15,25 @@
 หมายเลข/ชื่อโจทย์ OJ:
 
 ```text
-
+OJ3017 - Bill
 ```
 
 OJ submission ID ถ้ามีการส่งแล้ว:
 
 ```text
-
+554166
 ```
 
 สถานะ OJ:
 
 ```text
-Pass / Not Pass / Not Submit
+Pass
 ```
 
 เวลาที่ใช้คิดและทำโจทย์ด้วยตนเอง:
 
 ```text
-
+0-15 minutes
 ```
 
 เลือกหนึ่งข้อ:
@@ -73,7 +73,11 @@ More than 4 weeks
 ถ้ายังไม่เข้าใจโจทย์ทั้งหมด ให้เขียนสิ่งที่เข้าใจในตอนนี้ ความเข้าใจอาจยังไม่ครบหรืออาจผิดได้ แต่ต้องพยายามอธิบายอย่างจริงใจ
 
 ```text
+โจทย์ต้องการให้สร้างระบบที่ช่วยคิดค่าใช้จ่ายทั้งหมดจากอาหารและเครื่องดื่มซึ่งรวมค่าบริการกับ vat ตามเงื่อนไขที่กำหนด
 
+input: ค่าอาหารและเครื่องดื่มที่ยังไม่รวมค่าใช้จ่ายเพิ่มเติม
+output: ราคารวมที่ต้องจ่ายทั้งหมด
+constraints: เนื่องจากค่า vat คิดจากค่าอาหารที่รวมกับค่าบริการแล้ว ทำให้ต้องระวังส่วนนี้ในการเขียนสมการ
 ```
 
 ---
@@ -93,9 +97,9 @@ More than 4 weeks
 สามารถเขียนเป็น pseudocode, flowchart idea หรือขั้นตอนความคิดได้
 
 ```text
-Step 1:
-Step 2:
-Step 3:
+Step 1: เขียนให้ใส่ input ค่าอาหารและเครื่องดื่ม
+Step 2: ใช้ if else ร่วมกับสมการคำนวณค่าใช้จ่ายทั้งหมด
+Step 3: แสดงผลออกมาเป็นราคารวม
 ```
 
 ---
@@ -115,7 +119,7 @@ Step 3:
 ห้ามคัดลอกคำอธิบายจากคนอื่น
 
 ```text
-
+ใช้วิธีคล้ายกับแผนแรก แตกต่างที่มีการตั้งตัวแปรค่า service = cost * 0.1 ที่ช่วยให้ฉันสับสนน้อยลงขณะที่เขียนสมการที่ค่อนข้างยาว
 ```
 
 ---
@@ -135,31 +139,31 @@ Step 3:
 ทำไมเลือก case นี้:
 
 ```text
-
+เพื่อเช็คว่าใส่เครื่องหมาย ><= ในเงื่อนไขแรกถูกต้อง ซึ่ง input นี้ต้องถูกนำไปคำนวณในเงื่อนไขสุดท้าย
 ```
 
 Input:
 
 ```text
-
+10000
 ```
 
 Expected output:
 
 ```text
-
+11770.00
 ```
 
 Actual output:
 
 ```text
-
+11770.00
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ### Test Case 2
@@ -167,31 +171,31 @@ Pass / Not Pass
 ทำไมเลือก case นี้:
 
 ```text
-
+เพื่อเช็คว่าใส่เครื่องหมาย ><= ในเงื่อนไขแรกถูกต้อง และคำตอบออกมาตามที่โจทย์ต้องการ
 ```
 
 Input:
 
 ```text
-
+10001
 ```
 
 Expected output:
 
 ```text
-
+11771.07
 ```
 
 Actual output:
 
 ```text
-
+11771.07
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ### Test Case 3
@@ -199,31 +203,31 @@ Pass / Not Pass
 ทำไมเลือก case นี้:
 
 ```text
-
+เพื่อเช็คความถูกต้องของระบบเงื่อนไขและสมการในเงื่อนไขที่ 2
 ```
 
 Input:
 
 ```text
-
+499
 ```
 
 Expected output:
 
 ```text
-
+587.43
 ```
 
 Actual output:
 
 ```text
-
+587.43
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ---
@@ -233,7 +237,7 @@ Pass / Not Pass
 ใช้ AI กับโจทย์นี้หรือไม่
 
 ```text
-Yes / No
+No
 ```
 
 ถ้าใช้ AI ต้องทำไฟล์นี้ด้วย:
@@ -251,7 +255,7 @@ ai_reflection.md
 ได้ถามเพื่อน TA ผู้สอน หรือบุคคลอื่นเพื่อขอความช่วยเหลือในโจทย์นี้หรือไม่
 
 ```text
-Yes / No
+No
 ```
 
 ถ้าใช่ ให้อธิบายสั้น ๆ ว่าได้รับความช่วยเหลือแบบใด
@@ -276,19 +280,19 @@ Yes / No
 ใครช่วยคุณ
 
 ```text
-
+ไม่มีใคร
 ```
 
 เขาช่วยอะไร
 
 ```text
-
+ไม่ได้ใช้ความช่วยเหลือจากคน
 ```
 
 คุณยังทำอะไรด้วยตนเอง
 
 ```text
-
+ฉันคิดแผนแรก เขียน code สร้าง testcase และแก้ errors รวมถึงส่งงานด้วยตนเองทั้งหมด
 ```
 
 คุณคัดลอก code จากคนอื่นหรือไม่
@@ -305,10 +309,10 @@ No
 
 | Statement | Yes/No |
 |---|---|
-| I wrote this submission in my own words. | |
-| I understand my final code. | |
-| I recorded the real OJ status. | |
-| I did not copy AI-generated text directly into this file. | |
-| I did not copy code from another person. | |
-| If I received human help, I disclosed it in this file. | |
-| I submitted the final code to the OJ by myself. | |
+| I wrote this submission in my own words. | Yes |
+| I understand my final code. | Yes |
+| I recorded the real OJ status. | Yes |
+| I did not copy AI-generated text directly into this file. | Yes |
+| I did not copy code from another person. | Yes |
+| If I received human help, I disclosed it in this file. | Yes |
+| I submitted the final code to the OJ by myself. | Yes |
