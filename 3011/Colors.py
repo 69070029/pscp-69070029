@@ -1,12 +1,18 @@
 """COLORS"""
-Color1 = str(input())
-Color2 = str(input())
+COLOR_1 = str(input())
+COLOR_2 = str(input())
 
-if Color1 == "Red" and Color2 == "Yellow" or Color1 == "Yellow" and Color2 == "Red":
+if COLOR_1 == "Red" and COLOR_2 == "Yellow" or COLOR_1 == "Yellow" and COLOR_2 == "Red":
     print("Orange")
-elif Color1 == "Red" and Color2 == "Blue" or Color1 == "Blue" and Color2 == "Red":
+elif COLOR_1 == "Red" and COLOR_2 == "Blue" or COLOR_1 == "Blue" and COLOR_2 == "Red":
     print("Violet")
-elif Color1 == "Yellow" and Color2 == "Blue" or Color1 == "Blue" and Color2 == "Yellow":
+elif COLOR_1 == "Yellow" and COLOR_2 == "Blue" or COLOR_1 == "Blue" and COLOR_2 == "Yellow":
     print("Green")
+elif COLOR_1 == "Yellow" and COLOR_2 == "Yellow":
+    print("Yellow")
+elif COLOR_1 == "Blue" and COLOR_2 == "Blue":
+    print("Blue")
+elif COLOR_1 == "Red" and COLOR_2 == "Red":
+    print("Red")
 else:
     print("Error")
