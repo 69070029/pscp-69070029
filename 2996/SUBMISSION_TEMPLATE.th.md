@@ -15,25 +15,25 @@
 หมายเลข/ชื่อโจทย์ OJ:
 
 ```text
-
+OJ2996 - สลับตัวอักษร
 ```
 
 OJ submission ID ถ้ามีการส่งแล้ว:
 
 ```text
-
+550740
 ```
 
 สถานะ OJ:
 
 ```text
-Pass / Not Pass / Not Submit
+Pass
 ```
 
 เวลาที่ใช้คิดและทำโจทย์ด้วยตนเอง:
 
 ```text
-
+15-30 minutes
 ```
 
 เลือกหนึ่งข้อ:
@@ -73,7 +73,11 @@ More than 4 weeks
 ถ้ายังไม่เข้าใจโจทย์ทั้งหมด ให้เขียนสิ่งที่เข้าใจในตอนนี้ ความเข้าใจอาจยังไม่ครบหรืออาจผิดได้ แต่ต้องพยายามอธิบายอย่างจริงใจ
 
 ```text
+โจทย์ต้องการให้สร้างระบบที่รับข้อความภาษาอังกฤษความยาว 5 ตัวอักษรแล้วแสดงผลออกมาเป็นข้อความที่เขียนย้อนกลับและเป็นพิมพ์เล็กทั้งหมด
 
+input: รับข้อความตัวอักษรภาษาอังกฤษ 5 ตัวอักษร
+output: แสดงผลเป็นข้อความ input โดยเปลี่ยนลำดับตัวอักษรจากหลังมาหน้าและกลายเป็นพิมพ์เล็กทั้งหมด
+outstraints: ข้อความที่แสดงผลต้องเป็นพิมพ์เล็กทั้งหมด
 ```
 
 ---
@@ -93,9 +97,8 @@ More than 4 weeks
 สามารถเขียนเป็น pseudocode, flowchart idea หรือขั้นตอนความคิดได้
 
 ```text
-Step 1:
-Step 2:
-Step 3:
+Step 1: ให้ผู้ใช้ใส่ข้อความที่ต้องการแปลง
+Step 2: แสดงผลออกมาเป็นข้อความที่เรียงแบบกลับด้านและเป็นพิมพ์เล็ก
 ```
 
 ---
@@ -115,7 +118,7 @@ Step 3:
 ห้ามคัดลอกคำอธิบายจากคนอื่น
 
 ```text
-
+เนื่องจากโจทย์ไม่ได้มีเงื่อนไขที่ซับซ้อนมาก และสามารถแปลงข้อความ input ได้ในบรรทัดเดียว ทำให้วิธีสุดท้ายเหมือนกับวิธีแรกทั้งหมด
 ```
 
 ---
@@ -135,31 +138,31 @@ Step 3:
 ทำไมเลือก case นี้:
 
 ```text
-
+เพื่อให้แน่ใจว่า code นี้สามารถแปลงตัวอักษรทุกตำแหน่งเป็นพิมพ์เล็กได้
 ```
 
 Input:
 
 ```text
-
+APPLE
 ```
 
 Expected output:
 
 ```text
-
+elppa
 ```
 
 Actual output:
 
 ```text
-
+elppa
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ### Test Case 2
@@ -167,31 +170,31 @@ Pass / Not Pass
 ทำไมเลือก case นี้:
 
 ```text
-
+เช็คว่า code ยังทำงานได้ปกติแม้ input จะเป็นพิมพ์เล็กทั้งหมด
 ```
 
 Input:
 
 ```text
-
+mouse
 ```
 
 Expected output:
 
 ```text
-
+esuom
 ```
 
 Actual output:
 
 ```text
-
+esuom
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ### Test Case 3
@@ -199,31 +202,31 @@ Pass / Not Pass
 ทำไมเลือก case นี้:
 
 ```text
-
+เพื่อให้แน่ใจว่า code นี้สามารถแปลงตัวอักษรในตำแหน่งสุ่มให้เป็นพิมพ์เล็กได้
 ```
 
 Input:
 
 ```text
-
+tHaIS
 ```
 
 Expected output:
 
 ```text
-
+siaht
 ```
 
 Actual output:
 
 ```text
-
+siaht
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ---
@@ -233,7 +236,7 @@ Pass / Not Pass
 ใช้ AI กับโจทย์นี้หรือไม่
 
 ```text
-Yes / No
+No
 ```
 
 ถ้าใช้ AI ต้องทำไฟล์นี้ด้วย:
@@ -251,7 +254,7 @@ ai_reflection.md
 ได้ถามเพื่อน TA ผู้สอน หรือบุคคลอื่นเพื่อขอความช่วยเหลือในโจทย์นี้หรือไม่
 
 ```text
-Yes / No
+Yes
 ```
 
 ถ้าใช่ ให้อธิบายสั้น ๆ ว่าได้รับความช่วยเหลือแบบใด
@@ -276,19 +279,19 @@ Yes / No
 ใครช่วยคุณ
 
 ```text
-
+เพื่อนในสาขา
 ```
 
 เขาช่วยอะไร
 
 ```text
-
+ช่วยแนะนำเรื่องคำสั่งการแปลงตัวอักษรเป็นพิมพ์เล็ก
 ```
 
 คุณยังทำอะไรด้วยตนเอง
 
 ```text
-
+ฉันวางแผน เขียน code สร้างและทดลองแต่ละ testcases และส่งงานด้วยตนเอง
 ```
 
 คุณคัดลอก code จากคนอื่นหรือไม่
@@ -305,10 +308,10 @@ No
 
 | Statement | Yes/No |
 |---|---|
-| I wrote this submission in my own words. | |
-| I understand my final code. | |
-| I recorded the real OJ status. | |
-| I did not copy AI-generated text directly into this file. | |
-| I did not copy code from another person. | |
-| If I received human help, I disclosed it in this file. | |
-| I submitted the final code to the OJ by myself. | |
+| I wrote this submission in my own words. | Yes |
+| I understand my final code. | Yes |
+| I recorded the real OJ status. | Yes |
+| I did not copy AI-generated text directly into this file. | Yes |
+| I did not copy code from another person. | Yes |
+| If I received human help, I disclosed it in this file. | Yes |
+| I submitted the final code to the OJ by myself. | Yes |
