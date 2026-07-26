@@ -2,7 +2,10 @@
 def main():
     """input"""
     x = int(input())
-    ans = 7**x
-    print(f"{ans[-1:]}")
+    power = [1, 7, 9, 3]
+
+    ans = power[x % 4]
+
+    print(ans)
 
 main()

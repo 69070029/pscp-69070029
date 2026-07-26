@@ -1,27 +1,16 @@
-"""ตัวเลขโรมันแบบง่าย"""
-n = int(input())
+"""ตัวเลขโรมัน"""
+def main():
+    """input"""
+    num = int(input())
 
-if n > 9:
-    print("Error : Out of range")
-elif n < 0:
-    print("Error : Please input positive number")
-elif not n:
-    print("0")
-elif n == 1:
-    print("I")
-elif n == 2:
-    print("II")
-elif n == 3:
-    print("III")
-elif n == 4:
-    print("IV")
-elif n == 5:
-    print("V")
-elif n == 6:
-    print("VI")
-elif n == 7:
-    print("VII")
-elif n == 8:
-    print("VIII")
-elif n == 9:
-    print("IX")
+    roman = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+
+    if num > 9 or not num:
+        ans = "Error : Out of range"
+    elif num < 0:
+        ans = "Error : Please input positive number"
+    else:
+        ans = roman[num - 1]
+
+    print(ans)
+main()
