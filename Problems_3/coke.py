@@ -1,15 +1,26 @@
 """coke"""
 def main():
     """input"""
-    p_old = int(input())
-    cap = int(input())
-    p_new = int(input())
-    want_coke = int(input())
+    price = int(input())
+    keecap = int(input())
+    newprice = int(input())
+    want = int(input())
 
-    taam_ma_taorai = want_coke // cap
+    if not price or not want:
+        pay = 0
+    elif not keecap:
+        pay = want * price
+    else:
+        pay = 0
+        cap = 0
 
-    pay = (want_coke - taam_ma_taorai) * p_old + (taam_ma_taorai * p_new)
-
+        for _ in range(want):
+            if cap and not cap % keecap:
+                cap += 1
+                pay += newprice
+            else:
+                pay += price
+                cap += 1
     print(pay)
 
 

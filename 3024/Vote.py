@@ -1,14 +1,19 @@
 """Surprising Vote"""
 def main():
     """input"""
-    sum = int(input())
-    high = int(input())
-    remain = sum - high
+    total = float(input())
+    high = float(input())
+    remain = total - high
+    least = remain - high
 
-    x = max(remain)
-    y = min(remain)
+    if least < 0:
+        least = 0
 
-    print(x)
+    if high - least > 2:
+        ans = "Surprising"
+    else:
+        ans = "Not surprising"
+
+    print(ans)
 
 main()
-
