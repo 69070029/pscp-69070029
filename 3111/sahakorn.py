@@ -15,6 +15,9 @@ def main():
     elif member == "N" and pay >= 500:
         pay = pay * 0.97
 
+    if pay % 1 == 0.005:
+        pay = pay + 0.01
+        
     print(f"{pay:.2f}")
 
 main()

@@ -1,2 +1,6 @@
-print("hello world")
-print("wwwww")
+#test
+#print("yeyyy \n yeyyyy ey")
+
+#print("apple", "orange", sep='/')
+
+print(a + 4)
