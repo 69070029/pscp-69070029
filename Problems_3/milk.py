@@ -8,20 +8,17 @@ def main():
 
     daitaorai = int(cus_money // price)
 
-    captaorai = 0
-    taamtaorai = 0
-
     if not cap:
-        pay = daitaorai
+        total = daitaorai
     else:
-        for _ in range(daitaorai):
-            if not captaorai % cap:
-                taamtaorai += trade
-                captaorai += trade
-            captaorai += 1
+        total = daitaorai
+        captaorai = daitaorai
 
-        pay = taamtaorai + daitaorai
+        while captaorai >= cap:
+            taamtaorai = (captaorai // cap) * trade
+            total += taamtaorai
+            captaorai = (captaorai % cap) + taamtaorai
 
-    print(pay)
+    print(total)
 
 main()
