@@ -11,6 +11,8 @@ def main():
         elif path[1] == 'PKT':
             pay = 25 + (weight * 50)
             print(f"{pay:.2f}")
+        else:
+            print("Error")
 
     elif path[0] == 'CNX' and path[1] == 'UBP':
         pay = 15 + (weight * 40)
@@ -23,6 +25,8 @@ def main():
         elif path[1] == 'PKT':
             pay = 40 + (weight * 70)
             print(f"{pay:.2f}")
+        else:
+            print("Error")
 
     elif path[0] == 'PKT' and path[1] == 'CNX':
         pay = 30 + (weight * 60)

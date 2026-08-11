@@ -15,9 +15,10 @@ def main():
         pay = daitaorai
     else:
         for _ in range(daitaorai):
-            captaorai += 1
             if not captaorai % cap:
                 taamtaorai += trade
+                captaorai += trade
+            captaorai += 1
 
         pay = taamtaorai + daitaorai
 
