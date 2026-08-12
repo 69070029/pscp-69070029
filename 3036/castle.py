@@ -1,10 +1,24 @@
 """prasart"""
+import math
+
 def main():
     """input"""
-    start = int(input())
-    str(start)
+    room = int(input())
 
-    for i in range(1, 100001):
-        print(i)
+    #หาแถวของเลขห้อง
+    row = math.ceil(math.sqrt(room))
+
+    if row % 2:
+        if room % 2: #ห้องคี่
+            wall = 2 * row - 2
+        else: #ห้องคู่
+            wall = 2 * row - 3
+    else: #แถวคู่
+        if room % 2: #ห้องคี่
+            wall = 2 * row - 3
+        else: #ห้องคู่
+            wall = 2 * row - 2
+
+    print(wall)
 
 main()
