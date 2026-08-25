@@ -4,8 +4,20 @@ def main():
     path = input().split()
     weight = float(input())
 
-    start = ['BKK', 'CNX', 'UBP', 'BKK', 'PKT', 'UBP']
-    end = ['CNX', 'UBP', 'BKK', 'PKT', 'CNX', 'PKT']
+    schedule = {
+        "BKK": {"CNX": "10 30", "PKT": "25 50"},
+        "CNX": {"UBP": "15 40"},
+        "UBP": {"BKK": "20 40", "PKT": "40 70"},
+        "PKT": {"CNX": "30 60"}
+    }
 
-    print(start.index(path[0]))
+    if path[0] in schedule and path[1] in schedule[path[0]]:
+        result = schedule[path[0]][path[1]]
+
+        pay = int(result[:2]) + int(result[-2:]) * weight
+
+        print(f"{pay:.2f}")
+    else:
+        print("Error")
+
 main()
