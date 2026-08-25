@@ -10,15 +10,18 @@ def main():
         "M": {"1": 10, "2": 15, "3": 20}
     }
 
-    cal = tea[sweet[0]][sweet[1]] * int(sweet[2])
+    cal = tea[sweet[0]][sweet[1]] * float(sweet[2])
 
     if boba[0] == "H":
-        cal += int(boba[1]) * 5
+        cal += float(boba[1]) * 5
     elif boba[0] == "O":
-        cal += int(boba[1]) * 3
+        cal += float(boba[1]) * 3
     else:
-        cal += int(boba[1]) * 2
+        cal += float(boba[1]) * 2
 
-    print(cal)
+    if cal.is_integer():
+        print(int(cal))
+    else:
+        print(cal)
 
 main()
