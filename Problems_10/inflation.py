@@ -1,4 +1,6 @@
 """inflation"""
+import math
+
 def main():
     """input"""
     price = float(input())
