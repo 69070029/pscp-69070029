@@ -3,19 +3,8 @@ import math
 
 def main():
     """tumrai"""
-    park = input()
-    leave = input()
-    
-    if not "." in (park) or not "." in (leave):
-        print("ERROR")
-        return
-
-    park = park.split('.')
-    leave = leave.split('.')
-    
-    if (len(park) != 2 or len(leave) != 2) or (len(leave[1]) != 2 or len(park[1]) != 2):
-        print("ERROR")
-        return
+    park = input().split('.')
+    leave = input().split('.')
 
     h1, m1 = int(park[0]), int(park[1])
     h2, m2 = int(leave[0]), int(leave[1])
@@ -28,7 +17,8 @@ def main():
     start = h1 * 60 + m1
 
     if end < start:
-        end += 24 * 60
+        print("ERROR")
+        return
 
     diff = end - start
 
@@ -46,10 +36,7 @@ def main():
             6: 180,
         }
 
-        if hour in price:
-            pay = price[hour]
-        else:
-            pay = 250
+        pay = price.get(hour, 250)
 
     print(pay)
 
