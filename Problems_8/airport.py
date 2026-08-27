@@ -13,7 +13,7 @@ def main():
     park = park.split('.')
     leave = leave.split('.')
     
-    if len(park) != 2 or len(leave) != 2:
+    if (len(park) != 2 or len(leave) != 2) or (len(leave[1]) != 2 or len(park[1]) != 2):
         print("ERROR")
         return
 
