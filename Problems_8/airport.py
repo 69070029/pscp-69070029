@@ -27,10 +27,10 @@ def main():
 
         if hour in price:
             pay = price[hour]
-        elif 7 <= hour <= 24:
-            pay = 250
-        else:
+        elif hour > 24:
             pay = "ERROR"
+        else:
+            pay = 250
 
     print(pay)
 
