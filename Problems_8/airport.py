@@ -3,18 +3,39 @@ import math
 
 def main():
     """tumrai"""
-    park = input().split('.')
-    leave = input().split('.')
+    park = input()
+    leave = input()
+    
+    if not "." in (park) or not "." in (leave):
+        print("ERROR")
+        return
 
-    minutes = (int(leave[0]) * 60 + int(leave[1])) - (int(park[0]) * 60 + int(park[1]))
+    park = park.split('.')
+    leave = leave.split('.')
+    
+    if (len(park) != 2 or len(leave) != 2) or (len(leave[1]) != 2 or len(park[1]) != 2):
+        print("ERROR")
+        return
 
-    if minutes < 0:
-        minutes += 24 * 60 
+    h1, m1 = int(park[0]), int(park[1])
+    h2, m2 = int(leave[0]), int(leave[1])
 
-    if minutes <= 15:
+    if not (0 <= h1 <= 23 and 0 <= m1 <= 59 and 0 <= h2 <= 23 and 0 <= m2 <= 59):
+        print("ERROR")
+        return
+
+    end = h2 * 60 + m2
+    start = h1 * 60 + m1
+
+    if end < start:
+        end += 24 * 60
+
+    diff = end - start
+
+    if diff <= 15:
         pay = "FREE"
     else:
-        hour = math.ceil(minutes / 60)
+        hour = math.ceil(diff / 60)
 
         price = {
             1: 25,
@@ -27,10 +48,8 @@ def main():
 
         if hour in price:
             pay = price[hour]
-        elif 7 <= hour <= 24:
-            pay = 250
         else:
-            pay = "ERROR"
+            pay = 250
 
     print(pay)
 
