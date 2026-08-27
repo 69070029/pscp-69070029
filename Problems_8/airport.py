@@ -14,15 +14,18 @@ def main():
     if not (0 <= h1 <= 23 and 0 <= m1 <= 59 and 0 <= h2 <= 23 and 0 <= m2 <= 59):
         pay = "ERROR"
     else:
-        minutes = (h2 * 60 + m2) - (h1 * 60 + m1)
+        end = h2 * 60 + m2
+        start = h1 * 60 + m1
+        
+        if end < start:
+            end += 24 * 60
 
-        if minutes < 0:
-            minutes += 24 * 60
+        diff = end - start
 
-        if minutes <= 15:
+        if diff <= 15:
             pay = "FREE"
         else:
-            hour = math.ceil(minutes / 60)
+            hour = math.ceil(diff / 60)
 
             price = {
                 1: 25,
