@@ -1,5 +1,5 @@
 """aot"""
-num, check = map(int, input().split())
+num, _ = map(int, input().split())
 
 s_time = [0] * 1441
 
