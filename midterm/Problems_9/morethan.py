@@ -5,7 +5,7 @@ def main():
 
     more = []
 
-    for i in range(koo):
+    for _ in range(koo):
         num1 = int(input())
         num2 = int(input())
 

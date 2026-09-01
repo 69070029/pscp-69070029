@@ -1,22 +1,22 @@
 """CONAN"""
 def main():
     """input"""
-    word = input()
+    text = input()
     move = int(input())
 
     word_num = []
     new = ""
 
-    for i in range(len(word)):
-        num = ord(word[i]) + move
+    for word in text:
+        num = ord(word) + move
 
-        if num > ord('z'):
-            num -= (26 * (num // 122))
+        while num > ord('z'):
+            num -= (26 * (num // (122 * 1)))
 
         word_num.append(num)
 
-    for i in range(len(word_num)):
-        final = chr(word_num[i])
+    for num in word_num:
+        final = chr(num)
         new += final
 
     print(new)
