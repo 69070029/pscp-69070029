@@ -4,16 +4,21 @@ def main():
     word = input()
     move = int(input())
 
-    word_2 = ""
+    word_num = []
+    new = ""
 
     for i in range(len(word)):
-        if ord(word[i]) + move > 26:
-            new = chr((ord(word[i]) + move) % 26)
-            word_2 += new
-        else:
-            new = chr(ord(word[i]) + move)
-            word_2 += new
+        num = ord(word[i]) + move
 
-    print(word_2)
+        if num > ord('z'):
+            num -= (26 * (num // 122))
+
+        word_num.append(num)
+
+    for i in range(len(word_num)):
+        final = chr(word_num[i])
+        new += final
+
+    print(new)
 
 main()
