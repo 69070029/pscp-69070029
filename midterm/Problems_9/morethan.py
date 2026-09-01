@@ -13,7 +13,10 @@ def main():
             more.append(num1)
         else:
             more.append(num2)
-    
-    print(*more, sep=" + ", end=" = ")
-    print(sum(more))
+
+    if len(more) == 1:
+        print(more[0])
+    else:
+        print(*more, sep=" + ", end=" = ")
+        print(sum(more))
 main()
