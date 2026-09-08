@@ -10,7 +10,10 @@ def main():
         line = i + 1
         for j in range(size):
             if i == j or i + j == size - 1:
-                print(chr(rahus + abs(line - middle)), end="")
+                if letter == "#":
+                    print(letter, end="")
+                else:
+                    print(chr(rahus + abs(line - middle)), end="")
             else:
                 print("-", end="")
         print()
