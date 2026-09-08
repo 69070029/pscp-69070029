@@ -1,6 +1,4 @@
 """inflation"""
-import math
-
 def main():
     """input"""
     price = float(input())
@@ -8,6 +6,7 @@ def main():
 
     for _ in range(year):
         price += price * 0.0381
+        price = int(price * 100) / 100
 
     print(f"{price:.2f}")
 main()

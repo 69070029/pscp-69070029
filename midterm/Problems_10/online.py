@@ -28,7 +28,7 @@ def main():
     else:
         spc = 0
 
-    print(f"{total:.0f}")
+    print(int(total))
     print(rank)
     print(spc)
 main()
