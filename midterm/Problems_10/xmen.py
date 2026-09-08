@@ -1,6 +1,17 @@
 """x_shape"""
 def main():
     """input"""
-    size, letter = map(str, input().split())
-    print(type(size))
+    size, letter = input().split()
+    size = int(size)
+    rahus = ord(letter)
+    middle = (size // 2) + 1
+
+    for i in range(size):
+        line = i + 1
+        for j in range(size):
+            if i == j or i + j == size - 1:
+                print(chr(rahus + abs(line - middle)), end="")
+            else:
+                print("-", end="")
+        print()
 main()

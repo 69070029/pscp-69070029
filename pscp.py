@@ -7,4 +7,6 @@
 #for i in range(10):
 #    print(i)
 
-print(chr(ord('A') + 1))
+for i in range(5):
+    print(i)
+#print(chr(ord('A') + 1))
