@@ -8,5 +8,5 @@ def main():
         price += price * 0.0381
         price = int(price * 100) / 100
 
-    print(f"{price:.2f}")
+    print(price)
 main()
