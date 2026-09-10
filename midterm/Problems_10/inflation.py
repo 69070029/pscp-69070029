@@ -4,9 +4,10 @@ def main():
     price = float(input())
     year = int(input())
 
-    for _ in range(year):
-        price += price * 0.0381
-        price = int(price * 100) / 100
+    price = int(price * 100)
 
-    print(price)
+    for _ in range(year):
+        price += (price * 381) // 10000
+
+    print(f"{price // 100}.{price % 100:02d}")
 main()
