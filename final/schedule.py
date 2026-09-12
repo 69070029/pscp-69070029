@@ -4,7 +4,7 @@ time = int(input())
 
 total = amount * time
 hr = total // 60
-min = total % 60
+min = total - (hr * 60)
 
 if not hr:
     print(f"{min} minute")
