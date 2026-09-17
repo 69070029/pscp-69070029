@@ -4,13 +4,13 @@ time = int(input())
 
 total = amount * time
 hr = total // 60
-min = total - (hr * 60)
+minute = total % 60
 
-if not hr:
-    print(f"{min} minute")
-elif not min:
-    print(f"{hr} hours")
-elif total <= 0:
+if total <= 0:
     print("No teaching")
+elif not hr:
+    print(f"{minute} minute")
+elif not minute:
+    print(f"{hr} hours")
 else:
-    print(f"{hr} hours {min} minute")
+    print(f"{hr} hours {minute} minute")
