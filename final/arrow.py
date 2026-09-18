@@ -2,14 +2,19 @@
 RL = input()
 size = int(input())
 
+middle = size - 1
+total = size * 2 - 1
+
 for word in RL:
-    box = []
-    for i in range(size * 2 - 1):
-        if i <= (size - 1):
-            line = (" " * (2 * i)) + ("*" * abs(size - i))
-            box.append(line)
-            print(line)
-        else:
-            box.reverse()
-            line = box[abs(size - i)]
-            print(line)
+    if word == "R":
+        dokjun = []
+        for i in range(total): #0 - 9
+            if i <= middle:
+                ans = ((" " * (i * 2)) + ("*" * (size - i)))
+                dokjun.append(ans)
+                print(ans)
+        for i in reversed(range(len(dokjun) - 1)):
+            print(dokjun[i])
+    else:
+        
+            

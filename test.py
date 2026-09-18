@@ -1,4 +1,3 @@
-size = 5
+apple = [1, 2, 3]
 
-for j in range(size - 1, -1, -1):
-    print(j)
+print(*apple, sep = "\n")
