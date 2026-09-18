@@ -12,7 +12,8 @@ elif 101 <= unit <= 200:
 else:
     pay = 2030 + (15 * (unit - 200))
 
-pay += pay * 0.07
-pay += unit / 2
+satang = pay * 100
+satang += ((pay * 0.07) * 100) + ((unit * 0.5) * 100)
 
-print(f"{pay:.1f}")
+
+
