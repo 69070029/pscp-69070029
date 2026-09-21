@@ -26,7 +26,5 @@ try:
             print(need * price, seat - need, sep=" ")
             seat -= need
 
-
 except EOFError:
     pass
-        
