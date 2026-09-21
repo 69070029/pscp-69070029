@@ -1,18 +1,18 @@
 """BUU"""
-text = input().upper()
+text = input()
 
-if not "B" in text:
+if not "B" in text.upper():
     new = "B"
 
     while len(new) < len(text):
         if new[-2:] == "UU":
             new += "B"
-        else: new += "U" #BUUBUU...
+        else: new += "U"
 
-    print(new)
+    print(new[:len(text)])
 
-elif not "BUU" in text:
-    pos = text.index("B")
+elif not "BUU" in text.upper():
+    pos = text.upper().index("B")
     print(text[:pos + 1] + "U" * (len(text) - pos - 1))
 
 else:
@@ -20,10 +20,10 @@ else:
     howmuch = 0
 
     for i, char in enumerate(text):
-        if char == "B":
+        if char.upper() == "B":
             j = i + 1
 
-            while j < len(text) and text[j] == "U":
+            while j < len(text) and text[j].upper() == "U":
                 howmuch += 1
                 j += 1
 
