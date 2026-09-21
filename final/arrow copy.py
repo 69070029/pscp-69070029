@@ -2,7 +2,7 @@
 RL = input()
 size = int(input())
 
-for word in RL:
+for i, word in enumerate(RL):
     if word == "R":
         box = []
         for i in range(1, size + 1):
@@ -20,5 +20,5 @@ for word in RL:
         for ans in box[-2::-1]:
             print(ans)
 
-    if word != RL[-1]:
+    if i != len(RL) - 1:
         print()
