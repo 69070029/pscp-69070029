@@ -1,3 +1,3 @@
-apple = [1, 2, 3]
-
-print(*apple, sep = "\n")
+pair = 4
+for i in range(pair):
+    print(i)
