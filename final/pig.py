@@ -1,14 +1,16 @@
-#pig
+"""pig"""
 pair = int(input())
 makkwa = []
 
 num = list(map(int, input().split()))
 
-for i in range(pair * 2):
-    if i % 2: continue
+for _ in range(pair):
+    compare = []
+    for _ in range(2):
+        compare.append(num[0])
+        num.remove(num[0])
+    makkwa.append(max(compare))
 
-    makkwa.append(max(num[i], num[i + 1]))
-
-result = " + ".join(str(makkwa))
-print(makkwa)
-print(result)
+if pair > 1:
+    print(*makkwa, sep = " + ", end = " = ")
+print(sum(makkwa))
