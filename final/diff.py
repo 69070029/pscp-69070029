@@ -5,9 +5,9 @@ a = set()
 b = set()
 
 for _ in range(n):
-    a.add(input())
+    a.add(int(input()))
 for _ in range(m):
-    b.add(input())
+    b.add(int(input()))
 
 a = a - b
 
