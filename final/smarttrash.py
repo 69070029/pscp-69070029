@@ -6,13 +6,11 @@ for _ in range(machine):
     weight = list(map(float, input().split()))
     status = []
 
-    for i in range(len(weight)):
-        if weight[i] > 20:
+    for i,trash in enumerate(weight):
+        if trash > 20:
             status.append(f"Check Type {mat[i]}")
 
     if sum(weight) > 50:
-        status.append("Overloaded")
+        status.insert(0, "Overloaded")
 
-    status.reverse()
-
-    print(sum(weight), *status, sep=", ")
+    print(f"{sum(weight):.1f}", *status, sep=", ")
