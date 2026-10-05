@@ -1,3 +1,4 @@
-pair = 4
-for i in range(pair):
+col = int(input())
+
+for i in range(col): 
     print(i)

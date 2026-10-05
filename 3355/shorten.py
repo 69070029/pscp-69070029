@@ -2,7 +2,7 @@
 box = []
 
 while True:
-    any = int(input())
-    if any == -1: break
-    box.append(any)
+    box.append(int(input()))
+    if -1 in box: break
 
+    
