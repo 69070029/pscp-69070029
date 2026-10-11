@@ -17,7 +17,8 @@
 #text = "laznatergo"
 #print(text.index("ergo"))
 #print(len(text[text.index("ergo"):]))
-text = "BUU"
-for i in range(len(text)):
-    if text[i] == "B" and text[i + 1 : i + 3] == "UU":
-        print("YES")
+#text = "BUU"
+#for i in range(len(text)):
+    #if text[i] == "B" and text[i + 1 : i + 3] == "UU":
+        #print("YES")
+print(int("apple"))
