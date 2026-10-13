@@ -1,2 +1,1 @@
-word = "Can't do: Abbacchio al forno"
-print(word[10:])
+print("*" for _ in range(5))
