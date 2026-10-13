@@ -23,7 +23,7 @@ while True:
     if order == "DONE":
         break
 
-    if order[-1].isdigit():
+    if any(x.isdigit() for x in order):
         course.insert(riang(order) - 1, order)
     else:
         last.append(order)
