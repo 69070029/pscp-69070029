@@ -1,27 +1,30 @@
 """CuteCat CuteFox"""
+import ast
+
 total = int(input())
 animal = {}
 
 for _ in range(total):
-    catfox = input()
+    catfox = ast.literal_eval(input())
 
-    key, value = catfox.strip("{}").replace('"', '').split(" : ")
-    animal[key] = value
+    for name, num in catfox.items():
+        animal[num.strip()] = name.strip()
 
-if "Fubuki" not in animal and "Fox01" not in animal.values():
-    animal["Fubuki"] = "Fox01"
+if "Fubuki" not in animal.values() and "Fox01" not in animal:
+    animal["Fox01"] = "Fubuki"
 
-if "Garfield" not in animal and "Cat01" not in animal.values():
-    animal["Garfield"] = "Cat01"
-
-print(f"Cat : {sum(value.startswith("C") for value in animal.values())}")
-print(f"Fox : {sum(value.startswith("F") for value in animal.values())}")
+if "Garfield" not in animal.values() and "Cat01" not in animal:
+    animal["Cat01"] = "Garfield"
 
 def kk(x):
-    """riang cat-fox 01-n"""
-    return x[1][0], int(x[1][-2:])
+    """riang num"""
+    return int(x[3:])
 
-animal = dict(sorted(animal.items(), key=kk))
+cat = sorted((c for c in animal if c.startswith("Cat")), key=kk)
+fox = sorted((f for f in animal if f.startswith("Fox")), key=kk)
 
-for key, value in animal.items():
-    print(f"{key} : {value}")
+print(f"Cat : {len(cat)}")
+print(f"Fox : {len(fox)}")
+
+for a in cat + fox:
+    print(f"{animal[a]} : {a}")
