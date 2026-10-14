@@ -1,1 +1,3 @@
-print("*" for _ in range(5))
+current = [1, 2]
+current = current[:6]
+print(current)
