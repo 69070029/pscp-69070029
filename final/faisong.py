@@ -14,19 +14,18 @@ for _ in range(fai):
         for i in range(end + 1):
             light[i] = True
 
-tid = []
-count = 0
-
-light = light + light
-
 if all(light):
     print(360)
 else:
+    light = light + light
+    count = 0
+    ans = 0
+
     for x in light:
         if x:
             count += 1
+            ans = max(ans, count)
         else:
-            tid.append(count)
             count = 0
 
-    print(max(tid) - 1)
+    print(min(ans, 360) - 1)
