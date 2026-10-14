@@ -1,3 +1,2 @@
-current = [1, 2]
-current = current[:6]
-print(current)
+order = "panacotta #2"
+print(order[order.index("#") + 1:])
