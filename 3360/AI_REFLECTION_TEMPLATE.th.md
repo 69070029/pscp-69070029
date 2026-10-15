@@ -22,9 +22,9 @@ AI อาจช่วยตรวจ grammar, formatting หรือควา�
 
 | Item | Answer |
 |---|---|
-| OJ problem number/title |  |
-| OJ submission ID, if submitted |  |
-| OJ status | Pass / Not Pass / Not Submit |
+| OJ problem number/title | OJ3360 - หั่นขนมปัง |
+| OJ submission ID, if submitted | 	680296 |
+| OJ status | Pass |
 
 ---
 
@@ -46,7 +46,7 @@ Other: ...
 My answer:
 
 ```text
-
+ChatGPT
 ```
 
 ---
@@ -59,11 +59,11 @@ My answer:
 
 | Statement | Yes / No / Not Applicable | Short note |
 |---|---|---|
-| I read the relevant workflow before using AI. |  | Example: `workflows/STUDENT_WORKFLOW_WEB_CHAT.md`, `workflows/STUDENT_WORKFLOW_CHATGPT_CODEX.md`, `workflows/STUDENT_WORKFLOW_CLAUDE_CODE.md`, or another workflow announced by the instructor |
-| I used `instructions/COURSE_AI_INSTRUCTIONS.md`, `instructions/AGENTS.md`, or manually followed the course AI instructions if the tool did not support custom instructions. |  | Briefly explain how you used or followed it |
-| I wrote my own problem understanding before asking AI for help. |  | Briefly say where you wrote it, such as `submission.md` or private note |
-| I wrote my own first plan before asking AI for help. |  | Briefly say where you wrote it |
-| I used AI as a coach, reviewer, debugger, or test-case helper, not as a full-answer generator. |  | Briefly explain |
+| I read the relevant workflow before using AI. | Yes | Example: `workflows/STUDENT_WORKFLOW_WEB_CHAT.md`, `workflows/STUDENT_WORKFLOW_CHATGPT_CODEX.md`, `workflows/STUDENT_WORKFLOW_CLAUDE_CODE.md`, or another workflow announced by the instructor |
+| I used `instructions/COURSE_AI_INSTRUCTIONS.md`, `instructions/AGENTS.md`, or manually followed the course AI instructions if the tool did not support custom instructions. | Yes | Briefly explain how you used or followed it |
+| I wrote my own problem understanding before asking AI for help. | Yes | Briefly say where you wrote it, such as `submission.md` or private note |
+| I wrote my own first plan before asking AI for help. | Yes | Briefly say where you wrote it |
+| I used AI as a coach, reviewer, debugger, or test-case helper, not as a full-answer generator. | Yes | Briefly explain |
 
 ถ้าตอบ "No" ในข้อใด ให้อธิบายเหตุผล:
 
@@ -90,7 +90,7 @@ My answer:
 My answer:
 
 ```text
-
+ฉันให้ AI อธิบายโจทย์ออกมาเป็นภาพ
 ```
 
 ---
@@ -111,7 +111,7 @@ My answer:
 My answer:
 
 ```text
-
+รายละเอียดในโจทย์ที่ฉันมองข้ามไป
 ```
 
 ---
@@ -132,7 +132,7 @@ My answer:
 My answer:
 
 ```text
-
+ฉันนำความเข้าใจไปแก้ไขวิธีการแก้โจทย์นี้
 ```
 
 ---
@@ -148,7 +148,7 @@ My answer:
 My answer:
 
 ```text
-
+ฉันสามารถทำความเข้าใจโจทย์ยาวๆ ได้มากยิ่งขึ้น
 ```
 
 ---
@@ -159,8 +159,8 @@ My answer:
 
 | Statement | Yes / No |
 |---|---|
-| I wrote this reflection in my own words. |  |
-| This reflection describes my real AI use. |  |
-| I checked AI's suggestions before using them. |  |
-| I can explain my final code. |  |
-| I did not ask AI to write this reflection for me. |  |
+| I wrote this reflection in my own words. | Yes |
+| This reflection describes my real AI use. | Yes |
+| I checked AI's suggestions before using them. | Yes |
+| I can explain my final code. | Yes |
+| I did not ask AI to write this reflection for me. | Yes |
