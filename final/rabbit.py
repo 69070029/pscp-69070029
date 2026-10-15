@@ -11,19 +11,19 @@ else:
             print(ans, i)
             break
         if word == "a":
-            if i and speak[i-1] != "r":
+            if not i or speak[i-1] not in "ra":
                 ans = "no"
                 print(ans, i)
                 break
         if word == "r":
             if (i + 1 < len(speak) and speak[i + 1] not in "a") or i == len(speak) - 1:
                 ans = "no"
-                print(ans, i)
+                print(ans, i + 1)
                 break
         if word == "b":
             if ((i + 1 < len(speak) and speak[i + 1] not in "it") or i == len(speak) - 1):
                 ans = "no"
-                print(ans, i)
+                print(ans, i + 1)
                 break
 
     if ans == "yes":
