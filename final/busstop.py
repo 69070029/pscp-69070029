@@ -17,7 +17,7 @@ for j in range(stop):
         if not i:
             continue
         if person > ppl[0]:
-            if len(current) == cap:
+            if len(current) >= cap:
                 break
             current.append(person)
 
