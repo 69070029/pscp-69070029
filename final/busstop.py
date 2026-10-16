@@ -1,24 +1,32 @@
 """busstop I"""
 cap = int(input())
-stop = int(input())
+n = int(input())
 
-current = []
+stops = [[] for _ in range(n + 1)]
 
+for _ in range(n):
+    data = list(map(int, input().split()))
+    stop_id = data[0]
+    passengers = data[1:]
+    stops[stop_id] = passengers
+
+bus = []
 goal = 0
 
-for j in range(stop):
-    ppl = list(map(int, input().split()))
+for current in range(1, n + 1):
+    still_on = []
+    for person in bus:
+        if person == current:
+            goal += 1
+        else:
+            still_on.append(person)
+    bus = still_on
 
-    before = len(current)
-    current = [x for x in current if x != j + 1]
-    goal += before - len(current)
-
-    for i, person in enumerate(ppl):
-        if not i:
-            continue
-        if person > ppl[0]:
-            if len(current) >= cap:
+    for person in stops[current]:
+        if person > current:
+            if len(bus) < cap:
+                bus.append(person)
+            else:
                 break
-            current.append(person)
 
 print(goal)
