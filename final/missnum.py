@@ -1,13 +1,20 @@
 """missing number"""
-current = 0
-
 last = int(input())
+num = []
 
-for i in range(1, last + 1):
-    num = int(input())
+while True:
+    num.append(int(input()))
 
-    if i != 1 and num != current + 1:
-        for j in range(1, num - current + 1):
-            print(num + j)
+    if 0 in num:
+        num.remove(0)
+        break
 
-    current = num
+num = sorted(num)
+
+should = set()
+
+should.update(x for x in range(1, last + 1))
+
+ans = sorted(should - set(num))
+
+print(*ans, sep="\n")
