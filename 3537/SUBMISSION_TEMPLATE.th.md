@@ -15,13 +15,13 @@
 หมายเลข/ชื่อโจทย์ OJ:
 
 ```
-OJ3538 - B - Fully pair?
+OJ3537 - Impostor
 ```
 
 OJ submission ID ถ้ามีการส่งแล้ว:
 
 ```
-694014
+693166
 ```
 
 สถานะ OJ:
@@ -33,7 +33,7 @@ Pass
 เวลาที่ใช้คิดและทำโจทย์ด้วยตนเอง:
 
 ```
-0-15 minutes
+15-30 minutes
 ```
 
 เลือกหนึ่งข้อ:
@@ -73,13 +73,21 @@ More than 4 weeks
 ถ้ายังไม่เข้าใจโจทย์ทั้งหมด ให้เขียนสิ่งที่เข้าใจในตอนนี้ ความเข้าใจอาจยังไม่ครบหรืออาจผิดได้ แต่ต้องพยายามอธิบายอย่างจริงใจ
 
 ```
-โจทย์ให้เช็คว่า ในการจับคู่เต้นลีลาศครั้งนี้สามารถจับคู่ได้ครบหรือไม่ ถ้าไม่ครบ มีใครที่ไม่มีคู่บ้าง (จับคู่โดยการให้แต่ละคนเขียน a-z )
+โจทย์ให้เช็คว่า ในยานอวกาศนี้ หลังโหวตไล่สมาชิกจำนวนนึงแล้ว จะเหลือ Impostor ในยานกี่คน เหลือใครในยานบ้าง และมีใครถูกขับไล่ออกบ้าง โดยต้องระบุบทบาทคนนั้นด้วย
 
-Input: ตัวอักษร a-z
+Input:
+หลายบรรทัดจนกว่า input == "Start": ใส่ชื่อและบทบาท (Crewmate/Impostor)
+หลายบรรทัดจนกว่า input == "End": ใส่ผู้ที่ถูกโหวตไล่ออกไป
 
-Output: ตัวอักษรที่ไม่มีคู่เรียงจากซ้ายไปขวา หากมีคู่ทุกคน ตอบ fully paired
+Output:
+บรรทัดที่ 1: จำนวน Imposter ที่เหลือ (... Impostor Remains)
+บรรทัดที่ 2: ***Alive***
+บรรทัดที่ 3/หลายบรรทัด: ชื่อผู้รอดชีวิตทุกคนตามด้วยบทบาทระหว่างCrewmate หรือ Impostor
+บรรทัดที่ 4: ***Dead***
+บรรทัดที่ 5/หลายบรรทัด: ชื่อผู้ที่เสียชีวิตตามด้วยบทบาทระหว่างCrewmate หรือ Impostor
 
-Constraints: ความยาว input > 0 และเป็นพิมพ์เล็ก
+
+Constraints: รายชื่อตอน output เรียงตามอักษร
 ```
 
 ---
@@ -99,10 +107,12 @@ Constraints: ความยาว input > 0 และเป็นพิมพ�
 สามารถเขียนเป็น pseudocode, flowchart idea หรือขั้นตอนความคิดได้
 
 ```text
-Step 1: รับ input เป็น str
-Step 2: ทำ list เก็บทุกตัวใน input
-Step 3: เช็คว่าหากทุกตัวหารสองลงตัว ให้ตอบว่า fully paired ได้เลย
-Step 4: นอกจากนั้น เคสที่เหลือจะนำเข้า for loop เพื่อไล่เช็คทีละตัวว่าตัวนั้นมีจำนวนเท่าไหร่ หากจำนวนที่มีการสองไม่ลงตัว จะนำขึ้นไปเก็บในตัวแปร result เพื่อแสดงผล (หากตัวอักษรนั้นเคยนับไปแล้วจะข้าม)
+Step 1: import ast
+Step 2: ตั้งตัวแปรคนที่อยู่ในยาน (station = {}) และคนที่โดนเตะออก (kicked = {})
+Step 3: while loop รับสมาชิกด้วย ast.lieral_eval() จนกว่าจะเจอ Start แล้ว update เข้า station
+Step 4: while loop รับ input ของคนที่โดนเตะออกและ update เข้าไปใน kicked จนกว่าจะเจอ End
+Step 5: sorted ทั้ง kicked และ station
+Step 6: นำ dict ทั้งสองมาเขียนแสดงผลตามที่โจทย์ต้องการ
 ```
 
 ---
@@ -142,25 +152,40 @@ Step 4: นอกจากนั้น เคสที่เหลือจะ�
 ทำไมเลือก case นี้:
 
 ```
-เช็คว่า code ทำงานได้หากตัวอักษรอยู่สลับกัน
+เช็คการทำงานเบื้องต้นของ code
 ```
 
 Input:
 
 ```
-abab
+{"A" : "Crewmate"}
+{"B" : "Impostor"}
+{"C" : "Crewmate"}
+Start
+B
+End
 ```
 
 Expected output:
 
 ```
-fully paired
+0 Impostor Remains
+***Alive***
+A : Crewmate
+C : Crewmate
+***Dead***
+B : Impostor
 ```
 
 Actual output:
 
 ```
-fully paired
+0 Impostor Remains
+***Alive***
+A : Crewmate
+C : Crewmate
+***Dead***
+B : Impostor
 ```
 
 Result:
@@ -174,25 +199,39 @@ Pass
 ทำไมเลือก case นี้:
 
 ```
-เช็คว่า code จะไม่นับตัวอักษรที่คู่ไม่ครบซ้ำ
+เช็คว่าหากไม่มีการโหวตคนออก code ยังทำงานได้
 ```
 
 Input:
 
 ```
-cccddcc
+{"A" : "Crewmate"}
+{"B" : "Impostor"}
+{"C" : "Crewmate"}
+Start
+End
 ```
 
 Expected output:
 
 ```
-c
+1 Impostor Remains
+***Alive***
+A : Crewmate
+B : Impostor
+C : Crewmate
+***Dead***
 ```
 
 Actual output:
 
 ```
-c
+1 Impostor Remains
+***Alive***
+A : Crewmate
+B : Impostor
+C : Crewmate
+***Dead***
 ```
 
 Result:
@@ -206,25 +245,41 @@ Pass
 ทำไมเลือก case นี้:
 
 ```
-เช็คว่า code จะนับตัวอักษรที่มีหลายคู่ว่าเป็น fully paired
+เช็คว่าหากคนที่ถูกเตะออกไม่ใช่ Impostor จำนวน Impostor ในยานจะเท่าเดิม
 ```
 
 Input:
 
 ```
-bbbbbb
+{"A" : "Crewmate"}
+{"B" : "Impostor"}
+{"C" : "Crewmate"}
+Start
+A
+C
+End
 ```
 
 Expected output:
 
 ```
-fully paired
+1 Impostor Remains
+***Alive***
+B : Impostor
+***Dead***
+A : Crewmate
+C : Crewmate
 ```
 
 Actual output:
 
 ```
-fully paired
+1 Impostor Remains
+***Alive***
+B : Impostor
+***Dead***
+A : Crewmate
+C : Crewmate
 ```
 
 Result:
@@ -240,7 +295,7 @@ Pass
 ใช้ AI กับโจทย์นี้หรือไม่
 
 ```
-No
+Yes
 ```
 
 ถ้าใช้ AI ต้องทำไฟล์นี้ด้วย:
