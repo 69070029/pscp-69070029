@@ -1,25 +1,26 @@
 """goods stock"""
 goods = []
 count = []
-while True:
-    rubna = input()
 
-    if rubna == "END":
+while True:
+    rubna = input().split()
+    command = rubna[0]
+
+    if command == "END":
         break
 
-    if rubna.startswith("ADD"):
-        item = rubna.split()[1]
-        amount = int(rubna.split()[2])
+    if command == "ADD":
+        item = rubna[1]
+        amount = int(rubna[2])
 
         if item in goods:
             count[goods.index(item)] += amount
         else:
             goods.append(item)
             count.append(amount)
-
-    elif rubna.startswith("REMOVE"):
-        item = rubna.split()[1]
-        amount = int(rubna.split()[2])
+    elif command == "REMOVE":
+        item = rubna[1]
+        amount = int(rubna[2])
 
         if item not in goods:
             goods.append(item)
@@ -27,25 +28,24 @@ while True:
             print(f"Not enough stock for {item}")
         else:
             idx = goods.index(item)
+
             if count[idx] >= amount:
                 count[idx] -= amount
             else:
                 count[idx] = 0
                 print(f"Not enough stock for {item}")
 
-    elif rubna == "REPORT":
-        result = sorted(zip(count, goods), reverse=True)
+    elif command == "CHECK":
+        low_stock = [
+            item for item, amount in zip(goods, count)
+            if amount < 5
+        ]
 
-        for i, a in result:
-            print(f"{a}: {i}")
-
-    else:
-        lessthan5 = []
-        for stuff in count:
-            if stuff < 5:
-                lessthan5.append(item)
-        if len(lessthan5) < 1:
-            print("All stocks are sufficient")
+        if low_stock:
+            print(*sorted(low_stock), sep="\n")
         else:
-            for item in sorted(lessthan5):
-                print(item)
+            print("All stocks are sufficient")
+
+    elif command == "REPORT":
+        for item, amount in sorted(zip(goods, count), reverse=True):
+            print(f"{item}: {amount}")
